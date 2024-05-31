@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root{
+    /* font-family font-weight font-size */
+    --ff-poppins:'Poppins', sans-serif;
+
+    --fw-light:200;
+    --fw-normal:400;
+    --fw-bold:600;
+
+    --fs-400:0.9375rem;
+    --fs-500:1.25rem;
+    --fs-600:1.625rem;
+    --fs-900:2.5rem;
+
+
+    /* Cards color */
+    --Cyan: hsl(180, 62%, 55%);
+    --Red: hsl(0, 78%, 62%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /* Neutral */ 
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-normal);
+    line-height: 1.7;
+    color: var(--Grayish-Blue);
+}
+
+body{
+    
+    margin: 0;
+    padding-block-end: 5rem;
+}
+h1,
+h2{
+    color: var(--Very-Dark-Blue);
+    line-height: 1.1;
+}
+.wrapper{
+    max-width:1200px;
+    padding-inline: 2rem;
+    margin-inline: auto;
+}
+.wrapper--narrow{
+    max-width: 550px;
+}
+header{
+    text-align: center;
+    margin-block: 6rem;
+}
+h1{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-900);
+}
+h1 span{
+    font-weight: var(--fw-bold);
+}
+header > p{
+    font-size: var(--fs-500);
+}
+.layout-grid{
+    --gap:2rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: var(--gap);
+}
+.layout-grid > *{
+    flex: 1;
+}
+.col{
+    display: grid;
+    align-content: center;  
+    gap: var(--gap);
+}
+.card{
+    --br:0.325rem;
+    padding: 2rem;
+    border-top: var(--br) solid;
+    border-radius: var(--br);
+    box-shadow:0rem 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.15);
+}
+.card__title{
+    font-size: var(--fs-600);
+    margin: 0;
+}
+.card__img{
+    display: block;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+.border-cyan{
+    border-color: var(--Cyan);
+}
+.border-red{
+    border-color: var(--Red);
+}
+.border-orange{
+    border-color: var(--Orange);
+}
+.border-blue{
+    border-color: var(--Blue);
+}
+@media(min-width:800px){
+    .layout-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
