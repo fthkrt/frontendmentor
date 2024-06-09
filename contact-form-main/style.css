@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-200:hsl(148, 38%, 91%);
+    --primary-500:hsl(0, 66%, 54%);
+    --primary-600:hsl(169, 82%, 27%);
+
+    --neutral-100:hsl(0, 0%, 100%);
+    --neutral-500:hsl(186, 15%, 59%);
+    --neutral-900:hsl(187, 24%, 22%);
+
+    --ff-karla:'Karla', sans-serif;
+    --fw-normal:400;
+    --fw-bold:700;
+
+}
+body{
+    background-color: var(--primary-200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--ff-karla);
+    font-size: 16px;
+}
+.form-container{
+    width: 650px;
+    padding: 30px;
+    background-color: var(--neutral-100);
+    border-radius: 15px;   
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form-group{
+    width: 100%;
+}
+.name-inputs{
+    display: flex;
+    gap: 10px;
+}
+.name-inputs input{
+    width: 100%;
+}
+label{
+    font-size: 14px;
+}
+input:not([type="checkbox"]):not([type="radio"]){
+    border: 1px solid var(--neutral-500);
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+    width: 100%;
+    cursor: pointer;
+}
+input:not([type="checkbox"]):not([type="radio"]):hover{
+    border:1px solid var(--primary-600)
+}
+input:not([type="checkbox"]):not([type="radio"]):focus, textarea:focus{
+    outline:1px solid var(--primary-600)
+}
+textarea{
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+    resize: none;
+    margin: 8px 0;
+    padding: 8px 10px;
+    border: 1px solid var(--neutral-500);
+    cursor: pointer;
+}
+#query{
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+}
+.query-type{
+    border: 1px solid var(--neutral-500);
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+.query-type label, .query-type input, .query-type{
+    cursor: pointer;
+}
+input[type="radio"]{
+    accent-color: var(--primary-600);
+}
+h1{
+    font-size:28px;
+    margin-bottom:20px;
+}
+button{
+    font-weight: var(--fw-bold);
+    color: var(--neutral-100);
+    background-color: var(--primary-600);
+    padding: 15px 0;
+    border-radius: 5px;
+    border:1px solid var(--neutral-900);
+    margin-top: 8px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: hsl(169, 82%, 15%);
+}
+.checkbox > div{
+    display: flex;
+    margin-bottom: 8px;
+    gap: 10px;
+    align-items: center;
+}
+input[type="checkbox"]{
+    accent-color: var(--primary-600);
+    width: 15px;
+}
+span.error{
+    font-size: 14px;
+    display: block;
+    color: var(--primary-500);
+}
+span.hidden{
+    display: none;
+}
+.radio-selected{
+    background-color: var(--primary-200);
+    border: 1px solid var(--primary-600);
+}
+.star{
+    color: var(--primary-600);
+}
+.toast{
+    position: fixed;
+    top: 30px;
+    background-color: var(--neutral-900);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--neutral-100);
+    font-size: 14px;
+    transition: all .7s linear;
+}
+.toast > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;   
+}
+.toast img{
+    width: 14px;
+}
+.toast span{
+    font-weight: var(--fw-bold);
+}
+.toast.hidden{
+    transform: translateY(-400px);   
+}
+@media screen and (max-width: 400px){
+    .form-container{
+        width: 300px;
+    }
+    .name-inputs{
+        flex-wrap: wrap;
+    }
+    #query{
+        flex-wrap: wrap;
+    }
+    .toast{
+        width: 300px;
+    }
+    
+}
